@@ -30,8 +30,7 @@ def get_angles(pos, i, d):
     
     return angles
   
-  
-  # UNIT TEST
+# UNIT TEST
 def get_angles_test(target):
     position = 4
     d_model = 16
@@ -196,7 +195,6 @@ def scaled_dot_product_attention(q, k, v, mask):
     Returns:
         output -- attention_weights
     """
-    # START CODE HERE
     
     # Q*K'
     matmul_qk = tf.matmul(q, k.T)
@@ -214,9 +212,7 @@ def scaled_dot_product_attention(q, k, v, mask):
     attention_weights = tf.keras.activations.softmax(scaled_attention_logits)  # (..., seq_len_q, seq_len_k)
     # attention_weights * V
     output = tf.matmul(attention_weights, v)  # (..., seq_len_q, depth_v)
-    
-    # END CODE HERE
-
+  
     return output, attention_weights
   
   
